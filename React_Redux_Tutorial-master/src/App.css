@@ -1,0 +1,194 @@
+* {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Base Styles */
+.ui.cards > .card > .image {
+  height: 250px;
+  padding: 20px;
+  background: #fff;
+  margin: auto;
+}
+.ui.cards > .card > .image > img {
+  height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+.ui.cards > .card > .content > .header {
+  height: 48px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.ui.cards > .card > .content > .description {
+  height: 36px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.ui.cards > .card .meta.price {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+.ui.cards > .card .meta.price > a {
+  font-size: 1.3rem;
+  color: #222;
+}
+.ui.menu.fixed {
+  height: 60px;
+  padding-top: 15px;
+}
+.ui.grid.container {
+  margin-top: 45px;
+}
+.ui.grid > .row {
+  background: #fff;
+}
+.ui.grid > .row > .column.lp {
+  padding: 20px 40px 20px 20px;
+  align-self: flex-start !important;
+}
+.ui.grid > .row > .column.rp {
+  padding: 20px 20px 20px 40px;
+  text-align: left;
+  align-self: flex-start !important;
+}
+.ui.grid > .row > .column > img,
+.ui.grid > .row > img {
+  height: 100%;
+}
+.ui.placeholder .header:not(:first-child):before,
+.ui.placeholder .image:not(:first-child):before,
+.ui.placeholder .paragraph:not(:first-child):before {
+  display: none;
+}
+.ui.label,
+.ui.labels .label {
+  font-size: 22px;
+}
+.column.rp h1 {
+  color: #333;
+}
+.column.rp p {
+  font-size: 18px;
+  color: #777;
+}
+.ui.placeholder.segment .column .button,
+.ui.placeholder.segment .column .field,
+.ui.placeholder.segment .column textarea,
+.ui.placeholder.segment .column > .ui.input {
+  background-color: #ff3e6c;
+  border: 1px solid #ff3e6c;
+  color: #fff;
+  font-size: 18px;
+  margin-left: 0;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .ui.cards > .card > .image {
+    height: 200px;
+    padding: 15px;
+  }
+  .ui.cards > .card .meta.price {
+    font-size: 16px;
+  }
+  .ui.cards > .card > .content > .description {
+    font-size: 13px;
+    height: auto;
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media (max-width: 992px) {
+  .ui.grid.container {
+    margin-top: 35px;
+  }
+  .ui.grid > .row > .column.lp,
+  .ui.grid > .row > .column.rp {
+    padding: 15px;
+  }
+  .ui.cards > .card > .content > .description {
+    font-size: 12px;
+    height: auto;
+    -webkit-line-clamp: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .ui.menu.fixed {
+    height: 50px;
+    padding-top: 10px;
+  }
+  .ui.cards > .card > .image {
+    height: 150px;
+    padding: 10px;
+  }
+  .ui.cards > .card .meta.price {
+    font-size: 14px;
+  }
+  .ui.cards > .card > .content > .header {
+    height: 40px;
+  }
+  .ui.cards > .card > .content > .description {
+    font-size: 11px;
+    height: auto;
+    -webkit-line-clamp: 5;
+  }
+  .ui.label,
+  .ui.labels .label {
+    font-size: 20px;
+  }
+  .column.rp h1 {
+    font-size: 22px;
+  }
+  .column.rp p {
+    font-size: 16px;
+  }
+  .ui.placeholder.segment .column .button,
+  .ui.placeholder.segment .column .field,
+  .ui.placeholder.segment .column textarea,
+  .ui.placeholder.segment .column > .ui.input {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ui.cards > .card > .image {
+    height: 100px;
+    padding: 5px;
+  }
+  .ui.cards > .card .meta.price {
+    font-size: 12px;
+  }
+  .ui.cards > .card > .content > .header {
+    height: 30px;
+  }
+  .ui.cards > .card > .content > .description {
+    font-size: 10px;
+    height: auto;
+    -webkit-line-clamp: 6;
+  }
+  .ui.label,
+  .ui.labels .label {
+    font-size: 18px;
+  }
+  .column.rp h1 {
+    font-size: 20px;
+  }
+  .column.rp p {
+    font-size: 14px;
+  }
+  .ui.placeholder.segment .column .button,
+  .ui.placeholder.segment .column .field,
+  .ui.placeholder.segment .column textarea,
+  .ui.placeholder.segment .column > .ui.input {
+    font-size: 14px;
+  }
+}
