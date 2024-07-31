@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,11 +6,16 @@ import {
   selectedProduct,
   removeSelectedProduct,
 } from "../redux/actions/productsActions";
+import { addToCart } from "../redux/reducers/cartSlice";
+
 const ProductDetails = () => {
   const { productId } = useParams();
   let product = useSelector((state) => state.product);
   const { image, title, price, category, description } = product;
   const dispatch = useDispatch();
+
+  const [showMessage, setShowMessage] = useState(false);
+
   const fetchProductDetail = async (id) => {
     const response = await axios
       .get(`https://fakestoreapi.com/products/${id}`)
@@ -26,6 +31,15 @@ const ProductDetails = () => {
       dispatch(removeSelectedProduct());
     };
   }, [productId]);
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+  };
+
   return (
     <div className="ui grid container">
       {Object.keys(product).length === 0 ? (
@@ -36,7 +50,7 @@ const ProductDetails = () => {
             <div className="ui vertical divider">AND</div>
             <div className="middle aligned row">
               <div className="column lp">
-                <img className="ui fluid image" src={image} />
+                <img className="ui fluid image" src={image} alt={title} />
               </div>
               <div className="column rp">
                 <h1>{title}</h1>
@@ -45,12 +59,21 @@ const ProductDetails = () => {
                 </h2>
                 <h3 className="ui brown block header">{category}</h3>
                 <p>{description}</p>
-                <div className="ui vertical animated button" tabIndex="0">
+                <div
+                  className="ui vertical animated button"
+                  tabIndex="0"
+                  onClick={handleAddToCart}
+                >
                   <div className="hidden content">
                     <i className="shop icon"></i>
                   </div>
                   <div className="visible content">Add to Cart</div>
                 </div>
+                {showMessage && (
+                  <div className="ui positive message">
+                    <p>Added to cart successfully!</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
