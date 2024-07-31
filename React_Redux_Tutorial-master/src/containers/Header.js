@@ -21,7 +21,7 @@ console.log(isAuthenticated)
     <div className="ui fixed menu">
       <div className="ui container center">
         <h2>
-          <Link to="/">FakeShop</Link>
+          <Link to="/">Welcome To FakeShop</Link>
         </h2>
         <div className="right menu">
           <Link to="/" className="item"> Home</Link>
