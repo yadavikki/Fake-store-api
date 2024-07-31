@@ -9,7 +9,7 @@ const LoginPage = () => {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2>Welcome to Vikash's FakeShop</h2>
+        <h2>Welcome to FakeShop</h2>
         <p>Please log in to view more content and start shopping!</p>
         {/* <button className="ui button primary" onClick={loginWithRedirect}>
           Log In
